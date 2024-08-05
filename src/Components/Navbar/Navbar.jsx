@@ -3,6 +3,8 @@ import './navbar.scss';
 import { IoIosCloseCircle } from "react-icons/io";
 import { IoGrid } from "react-icons/io5";
 import logo from '../../Assets/logo.png'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -29,7 +31,7 @@ const removeNavbar = ()=>{
                 <div className={active}>
                     <ul className='navLists flex'>
                         <li className='navItem'>
-                            <a href="#" className='navLink'>Home</a>
+                            <a href="/home" className='navLink'><Link>Home</Link></a>
                         </li>
                         <li className='navItem'>
                             <a href="#" className='navLink'>Gallery</a>

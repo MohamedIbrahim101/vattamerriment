@@ -1,0 +1,71 @@
+.container{
+    display: flex;
+    justify-content: center;
+     flex-wrap: wrap;
+}
+.cards{
+    width: 300px;
+    margin: 30px;
+    background-color: rgb(234, 140, 140);
+    border-radius: 30px;
+
+}
+.card-img img{
+    width: 100%;
+    border-radius: 10px 10px 0px 0px ;
+}
+
+.card-body h2{
+    text-align: center;
+}
+.card-body p{
+    text-align: justify;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.card-footer 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+
+// .toggle-btn{
+//     background-color: gainsboro;
+//     border: 1px solid #aaa;
+//     border-radius: 99px;
+//     width: 50px;
+//     height: 28px;
+//     transition: background-color 0.1s, border-color 0.2s ease;
+//     cursor: pointer;
+//     position: relative;
+
+
+// }
+// .toggle-btn .thumb{
+//     height: 20px;
+//     width: 20px;
+//     background-color: #fff;
+//     border-radius: 99px;
+//     transform: translateX(0);
+//     transition: left 0.15s ease;
+//     position: absolute;
+//     left: 3px;
+//     top: 50%;
+//     transform: translateY(-50%);
+
+// }
+// .toggle-btn .toggle{
+//     background-color: #15b58e;
+// }
+
+// .toggle-btn:hover{
+//     border-color: #6f6f6f;
+// }
+
+// .toggle-btn.toggle .thumb{
+//     left: calc(50px - 25px);
+// }

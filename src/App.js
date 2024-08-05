@@ -4,6 +4,8 @@ import Footer from './Components/Footer/Footer'
 import Home from './Components/Home/Home'
 import Main from './Components/Main/Main'
 import Navbar from './Components/Navbar/Navbar'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
     <Main/>
     <Footer/>
     </>
+
+    
   );
 }
 
