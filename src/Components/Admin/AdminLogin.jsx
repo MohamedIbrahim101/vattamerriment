@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './admin.scss';
+import './adminLogin.scss';
 
 
 const Admin=()=>{

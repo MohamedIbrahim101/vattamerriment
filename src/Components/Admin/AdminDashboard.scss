@@ -1,0 +1,17 @@
+@keyframes blink {
+    0% {
+      color: yellow;
+    }
+    50% {
+      color: red;
+    }
+    100% {
+      color: yellow;
+    }
+  }
+  
+  .blink {
+    animation: blink 1s linear infinite alternate;
+  }
+  
+  
