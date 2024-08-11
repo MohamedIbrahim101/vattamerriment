@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AdminDashboard from "./Components/Admin/AdminDashboard";
 import AdminLoginPage from "./Components/Admin/AdminLogin";
+import Form from "./Components/Form/Form";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import Settings from "./Components/Admin/settings";
 import Home from "./App";
@@ -41,6 +42,9 @@ ReactDOM.render(
         <Route path="/login" element={<AdminLoginPage />} />
         <Route path="/dashboard" element={<AdminDashboard />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/form" element={<Form />} />
+
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

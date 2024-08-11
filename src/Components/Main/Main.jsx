@@ -7,33 +7,89 @@ import {HiOutlineClipboardCheck} from 'react-icons/hi'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
-const Data =[
+const Data1 =[
     {
         id:1,
         imgSrc: img,
-        destTitle: 'Cottage',
+        destTitle: 'Upper + Lower',
         location: 'New Zealand',
-        grade: 'Hotel Rent',
-        fees: '$600',
-        description: 'To write about the content of the rooms.'
+        description: 'Both Upper And Lower'
     },
 
     {
         id:2,
         imgSrc:img2,
-        destTitle: 'Cottage',
+        destTitle: 'Upper',
         location: 'New Zealand',
         grade: 'Hotel Rent',
-        fees: '$600',
+        fees: '$500',
         description: 'To write about the content of the rooms.'
     },
     {
         id:3,
         imgSrc:img3,
-        destTitle: 'Cottage',
+        destTitle: 'Lower',
         location: 'New Zealand',
         grade: 'Hotel Rent',
         fees: '$600',
+        description: 'To write about the content of the rooms.'
+    },
+]
+
+const Data2 =[
+    {
+        id:1,
+        imgSrc: img,
+        destTitle: 'Upper + Lower',
+        location: 'New Zealand',
+        description: 'Both Upper And Lower'
+    },
+
+    {
+        id:2,
+        imgSrc:img2,
+        destTitle: 'Upper',
+        location: 'New Zealand',
+        grade: 'Hotel Rent',
+        fees: '$50',
+        description: 'To write about the content of the rooms.'
+    },
+    {
+        id:3,
+        imgSrc:img3,
+        destTitle: 'Lower',
+        location: 'New Zealand',
+        grade: 'Hotel Rent',
+        fees: '$60',
+        description: 'To write about the content of the rooms.'
+    },
+]
+
+const Data3=[
+    {
+        id:1,
+        imgSrc: img,
+        destTitle: 'Upper + Lower',
+        location: 'New Zealand',
+        description: 'Both Upper And Lower'
+    },
+
+    {
+        id:2,
+        imgSrc:img2,
+        destTitle: 'Upper',
+        location: 'New Zealand',
+        grade: 'Hotel Rent',
+        fees: '$5',
+        description: 'To write about the content of the rooms.'
+    },
+    {
+        id:3,
+        imgSrc:img3,
+        destTitle: 'Lower',
+        location: 'New Zealand',
+        grade: 'Hotel Rent',
+        fees: '$6',
         description: 'To write about the content of the rooms.'
     },
 ]
@@ -42,63 +98,61 @@ const Main = () => {
     useEffect(()=>{
         Aos.init({duration: 2000})  
       }, [])
-  
-    return (
-    <section className='main container section'>
 
-        <div className="secTitle">
-            <h3 data-aos="fade-right"  className="title">
-                Most visited Destination
-            </h3>
-        </div>
-
-        <div className="secContent grid">
-            {
-                /*  */
-            }
-
-            {
-                Data.map(({id, imgSrc, description, destTitle, fees, grade, location })=>{
-                return(
-                    <div key={id} data-aos="fade-up" className="singleDestination">
-
+      const AddToRoom = (id, dataSet) => {
+        let selectedRooms = [];
+    
+        if (id === 1) {
+          selectedRooms = dataSet.filter(room => room.id === 2 || room.id === 3);
+        } else {
+          const selectedRoom = dataSet.find(room => room.id === id);
+          if (selectedRoom) {
+            selectedRooms = [selectedRoom];
+          }
+        }
+    
+        console.log('Selected rooms:', selectedRooms);
+    }    
+    const renderSection = (title, data) => (
+        <section className='main container section'>
+            <div className="secTitle">
+                <h3 data-aos="fade-right" className="title">{title}</h3>
+            </div>
+            <div className="secContent grid">
+                {data.map((room, index) => (
+                    <div key={index} data-aos="fade-up" className="singleDestination">
                         <div className="imageDiv">
-                            <img src={imgSrc} alt={destTitle} />
+                            <img src={room.imgSrc} alt={room.destTitle} />
                         </div>
-
                         <div className="cardInfo">
-                            <h4 className="destTitle">
-                                {destTitle}
-                            </h4>
-                            <span className="continent flex">
-                                {/* logo if needed*/}
-                            </span>
+                            <h4 className="destTitle">{room.destTitle}</h4>
                             <div className="fees flex">
                                 <div className="grade">
-                                    <span>{grade} <small>+1</small></span>
+                                    <span>{room.grade} <small>+1</small></span>
                                 </div>
                                 <div className="price">
-                                    <h5>{fees}</h5>
+                                    <h5>{room.fees}</h5>
                                 </div>
                             </div>
-
                             <div className="desc">
-                                <p>{description}</p>
+                                <p>{room.description}</p>
                             </div>
-
-                            <button className='btn flex'>
+                            <button onClick={() => AddToRoom(room.id, data)} className='btn flex'>
                                 DETAILS <HiOutlineClipboardCheck className="icon" />
                             </button>
                         </div>
-
                     </div>
-                )
+                ))}
+            </div>
+        </section>
+    )
 
-                })
-            }
-
-        </div>
-    </section>
+    return (
+        <>
+            {renderSection('Cottage 1', Data1)}
+            {renderSection('Cottage 2', Data2)}
+            {renderSection('Cottage 3', Data3)}
+        </>
     )
 }
 

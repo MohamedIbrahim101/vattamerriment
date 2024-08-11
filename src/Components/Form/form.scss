@@ -1,0 +1,105 @@
+
+.form-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .form-content {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .detailform {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .detailhead {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: rgb(236, 87, 87);
+    text-align: center;
+  }
+  
+  .detailinput {
+    margin-bottom: 15px;
+  }
+  
+  .detailinput label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .detailinput input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .column {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .paymentdetail {
+    margin-bottom: 15px;
+  }
+  
+  .payment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .payment input {
+    margin-right: 8px;
+  }
+  
+  .btn-detail {
+    padding: 10px 20px;
+    background:rgb(236, 87, 87);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-detail:hover {
+    background: rgb(228, 0, 0);
+  }
+  
+  .close-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  

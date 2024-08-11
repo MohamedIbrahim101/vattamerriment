@@ -31,11 +31,11 @@ const AdminDashboard = () => {
 
   const [rooms, setRooms] = useState(initialRooms);
 
-  const tableheadStyle = { textAlign: 'center', color: "black", fontWeight: "bolder" };
-  const tableCellStyle = { textAlign: 'center' };
-  const rowStyle1 = { backgroundColor: '#C4DFE6' };
-  const rowStyle2 = { backgroundColor: '#66A5AD' };
-  const borderStyle = { border: '1px solid white' };
+  const tableheadStyle = { textAlign: 'center', color: "white", fontWeight: "bolder" };
+  const tableCellStyle = { textAlign: 'center' ,color: "black", fontWeight: "bolder"};
+  const rowStyle1 = { backgroundColor: '' };
+  const rowStyle2 = { backgroundColor: '' };
+  const borderStyle = { border: '2px solid black' };
 
   const handleToggleStatus = (index) => {
     setRooms(prevRooms => 
@@ -47,7 +47,7 @@ const AdminDashboard = () => {
 
   return (
     <>
-   <AppBar position="static" style={{ backgroundColor: "#66A5AD" }}>
+   <AppBar position="static" style={{ backgroundColor: "rgb(236, 87, 87)" }}>
       <Toolbar>
         <Typography variant="h6" component="div" style={{ flexGrow: 1 }}>
           Dashboard
@@ -73,7 +73,7 @@ const AdminDashboard = () => {
       <Container>
         <TableContainer component={Paper} style={{ marginTop: '20px', border: '1px solid white' }}>
           <Table sx={{ borderCollapse: 'collapse' }}>
-            <TableHead style={{ backgroundColor: '#66A5AD' }}>
+            <TableHead style={{ backgroundColor: 'rgb(236, 87, 87)' }}>
               <TableRow>
                 <TableCell style={{ ...tableheadStyle, ...borderStyle }}>S.No</TableCell>
                 <TableCell style={{ ...tableheadStyle, ...borderStyle }}>Room No</TableCell>
@@ -101,8 +101,8 @@ const AdminDashboard = () => {
                       style={{
                         color:
                           room.status === "Pending"
-                            ? "yellow"
-                            : "green",
+                            ? "red"
+                            : "#008000",
                       }}
                     >
                       {room.status}
